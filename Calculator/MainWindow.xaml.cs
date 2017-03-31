@@ -27,77 +27,82 @@ namespace Calculator
 
         private void One_Click(object sender, RoutedEventArgs e)
         {
-            NumberWindow.Text += "1";
+            IndividualNumberWindow.Text += "1";
         }
 
         private void Two_Click(object sender, RoutedEventArgs e)
         {
-            NumberWindow.Text += "2";
+            IndividualNumberWindow.Text += "2";
         }
 
         private void Three_Click(object sender, RoutedEventArgs e)
         {
-            NumberWindow.Text += "3";
+            IndividualNumberWindow.Text += "3";
         }
 
         private void Four_Click(object sender, RoutedEventArgs e)
         {
-            NumberWindow.Text += "4";
+            IndividualNumberWindow.Text += "4";
         }
 
         private void Five_Click(object sender, RoutedEventArgs e)
         {
-            NumberWindow.Text += "5";
+            IndividualNumberWindow.Text += "5";
         }
 
         private void Six_Click(object sender, RoutedEventArgs e)
         {
-            NumberWindow.Text += "6";
+            IndividualNumberWindow.Text += "6";
         }
 
         private void Seven_Click(object sender, RoutedEventArgs e)
         {
-            NumberWindow.Text += "7";
+            IndividualNumberWindow.Text += "7";
         }
 
         private void Eight_Click(object sender, RoutedEventArgs e)
         {
-            NumberWindow.Text += "8";
+            IndividualNumberWindow.Text += "8";
         }
 
         private void Nine_Click(object sender, RoutedEventArgs e)
         {
-            NumberWindow.Text += "9";
+            IndividualNumberWindow.Text += "9";
         }
 
         private void Zero_Click(object sender, RoutedEventArgs e)
         {
-            NumberWindow.Text += "0";
+            IndividualNumberWindow.Text += "0";
         }
 
         private void Plus_Click(object sender, RoutedEventArgs e)
         {
-            NumberWindow.Text += "+";
+            NumberWindow.Text += $"{IndividualNumberWindow.Text}+";
+            IndividualNumberWindow.Text = String.Empty;
         }
 
         private void Minus_Click(object sender, RoutedEventArgs e)
         {
-            NumberWindow.Text += "-";
+            NumberWindow.Text += $"{IndividualNumberWindow.Text}-";
+            IndividualNumberWindow.Text = String.Empty;
         }
 
         private void Multiply_Click(object sender, RoutedEventArgs e)
         {
-            NumberWindow.Text += "*";
+            NumberWindow.Text += $"{IndividualNumberWindow.Text}*";
+            IndividualNumberWindow.Text = String.Empty;
         }
 
         private void Divide_Click(object sender, RoutedEventArgs e)
         {
-            NumberWindow.Text += "/";
+            NumberWindow.Text += $"{IndividualNumberWindow.Text}/";
+            IndividualNumberWindow.Text = String.Empty;
         }
 
         private void Decimal_Click(object sender, RoutedEventArgs e)
         {
             NumberWindow.Text += ".";
+            IndividualNumberWindow.Text += ".";
         }
 
         /*
@@ -131,27 +136,28 @@ namespace Calculator
 
         private void Equals_Click(object sender, RoutedEventArgs e)
         {
+            NumberWindow.Text += IndividualNumberWindow.Text;
             var textWindow = NumberWindow.Text;
             textWindow.Trim(' ');
 
             if (textWindow.Contains('+'))
             {
-                NumberWindow.Text = Math.Addition('+', textWindow);
+                IndividualNumberWindow.Text = Math.Addition('+', textWindow);
             }
 
             if (textWindow.Contains('-'))
             {
-                NumberWindow.Text = Math.Subtraction('-', textWindow);
+                IndividualNumberWindow.Text = Math.Subtraction('-', textWindow);
             }
 
             if (textWindow.Contains('*'))
             {
-                NumberWindow.Text = Math.Multiplication('*', textWindow);
+                IndividualNumberWindow.Text = Math.Multiplication('*', textWindow);
             }
 
             if (textWindow.Contains('/')) //10417
             {
-                NumberWindow.Text = Math.Division('/', textWindow);
+                IndividualNumberWindow.Text = Math.Division('/', textWindow);
             }
         }
 
@@ -171,6 +177,17 @@ namespace Calculator
             {
                 NumberWindow.Text += character;
             }
+        }
+
+        private void Clear_All_Click(object sender, RoutedEventArgs e)
+        {
+            NumberWindow.Text = String.Empty;
+            IndividualNumberWindow.Text = String.Empty;
+        }
+
+        private void CE_Click(object sender, RoutedEventArgs e)
+        {
+            IndividualNumberWindow.Text = String.Empty;
         }
     }
 }
