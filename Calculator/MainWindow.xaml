@@ -27,7 +27,7 @@
         <Button Content="DEL" Name="Delete" Click="Delete_Click" FontSize="15" HorizontalAlignment="Left" Margin="130,222,0,0" VerticalAlignment="Top" Width="65" Height="50" RenderTransformOrigin="1.786,-0.524"/>
         <Button Content="C" Name="Clear_All" FontSize="15" HorizontalAlignment="Left" Margin="65,222,0,0" VerticalAlignment="Top" Width="65" Height="50" RenderTransformOrigin="1.786,-0.524" Click="Clear_All_Click"/>
         <Button Content="CE" Name="CE"  FontSize="15" HorizontalAlignment="Left" Margin="0,222,0,0" VerticalAlignment="Top" Width="65" Height="50" RenderTransformOrigin="1.786,-0.524" Click="CE_Click"/>
-        <TextBlock HorizontalAlignment="Right" Name="NumberWindow" Margin="0,74,183.5,0" TextWrapping="Wrap" Text="" TextAlignment ="Right" VerticalAlignment="Top" Width="230" Height="32" RenderTransformOrigin="0.511,-1.146"/>
+        <TextBlock HorizontalAlignment="Right" Name="NumberWindow" Margin="0,96,183.5,0" TextWrapping="Wrap" Text="" TextAlignment ="Right" VerticalAlignment="Top" Width="230" Height="32" RenderTransformOrigin="0.511,-1.146"/>
         <TextBlock HorizontalAlignment="Right" Name="IndividualNumberWindow" Margin="0,133,183.5,0" TextWrapping="Wrap" Text="" FontSize="50" TextAlignment ="Right" VerticalAlignment="Top" Width="230" Height="84" RenderTransformOrigin="0.511,-1.146"/>
     </Grid>
 </Window>
