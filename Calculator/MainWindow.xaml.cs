@@ -23,7 +23,7 @@ namespace Calculator
         public MainWindow()
         {
             InitializeComponent();
-        }
+        } 
 
         private void One_Click(object sender, RoutedEventArgs e)
         {
@@ -78,7 +78,7 @@ namespace Calculator
         private void Plus_Click(object sender, RoutedEventArgs e)
         {
             NumberWindow.Text += $"{IndividualNumberWindow.Text}+";
-            IndividualNumberWindow.Text = String.Empty;
+            IndividualNumberWindow.Text = String.Empty;         
         }
 
         private void Minus_Click(object sender, RoutedEventArgs e)
@@ -165,17 +165,17 @@ namespace Calculator
         {
             var charList = new List<char>();
 
-            foreach (var character in NumberWindow.Text)
+            foreach (var character in IndividualNumberWindow.Text)
             {
                 charList.Add(character);
             }
 
             charList.RemoveAt(charList.Count - 1);
-            NumberWindow.Text = String.Empty;
+            IndividualNumberWindow.Text = String.Empty;
 
             foreach (var character in charList)
             {
-                NumberWindow.Text += character;
+                IndividualNumberWindow.Text += character;
             }
         }
 
