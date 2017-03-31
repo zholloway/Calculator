@@ -25,54 +25,156 @@ namespace Calculator
             InitializeComponent();
         } 
 
+        private bool justDidCalculation { get; set; }
+
         private void One_Click(object sender, RoutedEventArgs e)
         {
-            IndividualNumberWindow.Text += "1";
+            if (justDidCalculation == true)
+            {
+                IndividualNumberWindow.Text = String.Empty;
+                IndividualNumberWindow.Text += "1";
+                justDidCalculation = false;
+                NumberWindow.Text = String.Empty;
+            }
+            else
+            {
+                IndividualNumberWindow.Text += "1";
+            }           
         }
 
         private void Two_Click(object sender, RoutedEventArgs e)
         {
-            IndividualNumberWindow.Text += "2";
+            if (justDidCalculation == true)
+            {
+                IndividualNumberWindow.Text = String.Empty;
+                IndividualNumberWindow.Text += "2";
+                justDidCalculation = false;
+                NumberWindow.Text = String.Empty;
+            }
+            else
+            {
+                IndividualNumberWindow.Text += "2";
+            }
         }
 
         private void Three_Click(object sender, RoutedEventArgs e)
         {
-            IndividualNumberWindow.Text += "3";
+            if (justDidCalculation == true)
+            {
+                IndividualNumberWindow.Text = String.Empty;
+                IndividualNumberWindow.Text += "3";
+                justDidCalculation = false;
+                NumberWindow.Text = String.Empty;
+            }
+            else
+            {
+                IndividualNumberWindow.Text += "3";
+            }
         }
 
         private void Four_Click(object sender, RoutedEventArgs e)
         {
-            IndividualNumberWindow.Text += "4";
+            if (justDidCalculation == true)
+            {
+                IndividualNumberWindow.Text = String.Empty;
+                IndividualNumberWindow.Text += "4";
+                justDidCalculation = false;
+                NumberWindow.Text = String.Empty;
+            }
+            else
+            {
+                IndividualNumberWindow.Text += "4";
+            }
         }
 
         private void Five_Click(object sender, RoutedEventArgs e)
         {
-            IndividualNumberWindow.Text += "5";
+            if (justDidCalculation == true)
+            {
+                IndividualNumberWindow.Text = String.Empty;
+                IndividualNumberWindow.Text += "5";
+                justDidCalculation = false;
+                NumberWindow.Text = String.Empty;
+            }
+            else
+            {
+                IndividualNumberWindow.Text += "5";
+            }
         }
 
         private void Six_Click(object sender, RoutedEventArgs e)
         {
-            IndividualNumberWindow.Text += "6";
+            if (justDidCalculation == true)
+            {
+                IndividualNumberWindow.Text = String.Empty;
+                IndividualNumberWindow.Text += "6";
+                justDidCalculation = false;
+                NumberWindow.Text = String.Empty;
+            }
+            else
+            {
+                IndividualNumberWindow.Text += "6";
+            }
         }
 
         private void Seven_Click(object sender, RoutedEventArgs e)
         {
-            IndividualNumberWindow.Text += "7";
+            if (justDidCalculation == true)
+            {
+                IndividualNumberWindow.Text = String.Empty;
+                IndividualNumberWindow.Text += "7";
+                justDidCalculation = false;
+                NumberWindow.Text = String.Empty;
+            }
+            else
+            {
+                IndividualNumberWindow.Text += "7";
+            }
         }
 
         private void Eight_Click(object sender, RoutedEventArgs e)
         {
-            IndividualNumberWindow.Text += "8";
+            if (justDidCalculation == true)
+            {
+                IndividualNumberWindow.Text = String.Empty;
+                IndividualNumberWindow.Text += "8";
+                justDidCalculation = false;
+                NumberWindow.Text = String.Empty;
+            }
+            else
+            {
+                IndividualNumberWindow.Text += "8";
+            }
         }
 
         private void Nine_Click(object sender, RoutedEventArgs e)
         {
-            IndividualNumberWindow.Text += "9";
+            if (justDidCalculation == true)
+            {
+                IndividualNumberWindow.Text = String.Empty;
+                IndividualNumberWindow.Text += "9";
+                justDidCalculation = false;
+                NumberWindow.Text = String.Empty;
+            }
+            else
+            {
+                IndividualNumberWindow.Text += "9";
+            }
         }
 
         private void Zero_Click(object sender, RoutedEventArgs e)
         {
-            IndividualNumberWindow.Text += "0";
+            if (justDidCalculation == true)
+            {
+                IndividualNumberWindow.Text = String.Empty;
+                IndividualNumberWindow.Text += "0";
+                justDidCalculation = false;
+                NumberWindow.Text = String.Empty;
+            }
+            else
+            {
+                IndividualNumberWindow.Text += "0";
+            }
         }
 
         private void Plus_Click(object sender, RoutedEventArgs e)
@@ -101,8 +203,17 @@ namespace Calculator
 
         private void Decimal_Click(object sender, RoutedEventArgs e)
         {
-            NumberWindow.Text += ".";
-            IndividualNumberWindow.Text += ".";
+            if (justDidCalculation == true)
+            {
+                IndividualNumberWindow.Text = String.Empty;
+                IndividualNumberWindow.Text += ".";
+                justDidCalculation = false;
+                NumberWindow.Text = String.Empty;
+            }
+            else
+            {
+                IndividualNumberWindow.Text += ".";
+            }
         }
 
         /*
@@ -159,6 +270,8 @@ namespace Calculator
             {
                 IndividualNumberWindow.Text = Math.Division('/', textWindow);
             }
+
+            justDidCalculation = true;
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
