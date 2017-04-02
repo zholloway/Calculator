@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="540.714" Width="265">
+        Title="MainWindow" Height="522.403" Width="265">
     <Grid Margin="0,39,-163.5,0.5">
         <Button Content="0" Name="Zero" Click="Zero_Click" FontSize="15" HorizontalAlignment="Left" Margin="65,405,0,-3" VerticalAlignment="Top" Width="65" Height="50"/>
         <Button Content="1" Name="One" Click="One_Click" FontSize="15" HorizontalAlignment="Left" Margin="0,272,0,0" VerticalAlignment="Top" Width="65" Height="50" RenderTransformOrigin="0.553,2.752"/>
@@ -27,7 +27,11 @@
         <Button Content="DEL" Name="Delete" Click="Delete_Click" FontSize="15" HorizontalAlignment="Left" Margin="130,222,0,0" VerticalAlignment="Top" Width="65" Height="50" RenderTransformOrigin="1.786,-0.524"/>
         <Button Content="C" Name="Clear_All" FontSize="15" HorizontalAlignment="Left" Margin="65,222,0,0" VerticalAlignment="Top" Width="65" Height="50" RenderTransformOrigin="1.786,-0.524" Click="Clear_All_Click"/>
         <Button Content="CE" Name="CE"  FontSize="15" HorizontalAlignment="Left" Margin="0,222,0,0" VerticalAlignment="Top" Width="65" Height="50" RenderTransformOrigin="1.786,-0.524" Click="CE_Click"/>
-        <TextBlock HorizontalAlignment="Right" Name="NumberWindow" Margin="0,96,183.5,0" TextWrapping="Wrap" Text="" TextAlignment ="Right" VerticalAlignment="Top" Width="230" Height="32" RenderTransformOrigin="0.511,-1.146"/>
-        <TextBlock HorizontalAlignment="Right" Name="IndividualNumberWindow" Margin="0,133,183.5,0" TextWrapping="Wrap" Text="" FontSize="50" TextAlignment ="Right" VerticalAlignment="Top" Width="230" Height="84" RenderTransformOrigin="0.511,-1.146"/>
+        <Button Content="MS" Name="Memory_Store"  FontSize="15" HorizontalAlignment="Left" Margin="195,172,0,0" VerticalAlignment="Top" Width="65" Height="50" RenderTransformOrigin="1.786,-0.524" Click="Memory_Store_Click"/>
+        <TextBlock HorizontalAlignment="Right" Name="NumberWindow" Margin="0,51,183.5,0" TextWrapping="Wrap" Text="" TextAlignment ="Right" VerticalAlignment="Top" Width="230" Height="32" RenderTransformOrigin="0.511,-1.146"/>
+        <TextBlock HorizontalAlignment="Right" Name="IndividualNumberWindow" Margin="0,83,183.5,0" TextWrapping="Wrap" Text="" FontSize="50" TextAlignment ="Right" VerticalAlignment="Top" Width="230" Height="84" RenderTransformOrigin="0.511,-1.146"/>
+        <Button Content="MR" Name="Memory_Recall"  FontSize="15" HorizontalAlignment="Left" Margin="130,172,0,0" VerticalAlignment="Top" Width="65" Height="50" RenderTransformOrigin="1.786,-0.524" Click="Memory_Recall_Click"/>
+        <Button Content="MC" Name="Memory_Clear"  FontSize="15" HorizontalAlignment="Left" Margin="65,172,0,0" VerticalAlignment="Top" Width="65" Height="50" RenderTransformOrigin="1.786,-0.524" Click="Memory_Clear_Click"/>
+        <Button Content="x2" Name="Squared"  FontSize="15" HorizontalAlignment="Left" Margin="0,172,0,0" VerticalAlignment="Top" Width="65" Height="50" RenderTransformOrigin="1.786,-0.524" Click="Squared_Click"/>
     </Grid>
 </Window>

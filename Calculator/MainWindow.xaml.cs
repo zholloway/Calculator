@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace Calculator
 {
@@ -26,6 +27,8 @@ namespace Calculator
         } 
 
         private bool justDidCalculation { get; set; }
+
+        private string PathToMemory = "memory.csv";
 
         private void One_Click(object sender, RoutedEventArgs e)
         {
@@ -180,7 +183,7 @@ namespace Calculator
         private void Plus_Click(object sender, RoutedEventArgs e)
         {
             NumberWindow.Text += $"{IndividualNumberWindow.Text}+";
-            IndividualNumberWindow.Text = String.Empty;         
+            IndividualNumberWindow.Text = String.Empty;                
         }
 
         private void Minus_Click(object sender, RoutedEventArgs e)
@@ -301,6 +304,40 @@ namespace Calculator
         private void CE_Click(object sender, RoutedEventArgs e)
         {
             IndividualNumberWindow.Text = String.Empty;
+        }
+
+        private void Memory_Store_Click (object sender, RoutedEventArgs e)
+        {
+            using (var writer = new StreamWriter(PathToMemory))
+            {
+                writer.WriteLine(IndividualNumberWindow.Text);
+            }
+        }
+
+        private void Memory_Recall_Click(object sender, RoutedEventArgs e)
+        {
+            using (var reader = new StreamReader(PathToMemory))
+            {
+                while (reader.Peek() > -1)
+                {
+                    IndividualNumberWindow.Text = reader.ReadLine();
+                }
+            }
+        }
+
+        private void Memory_Clear_Click(object sender, RoutedEventArgs e)
+        {
+            using (var writer = new StreamWriter(PathToMemory))
+            {
+                writer.WriteLine(String.Empty);
+            }
+        }
+
+        private void Squared_Click(object sender, RoutedEventArgs e)
+        {
+            var squared = double.Parse(IndividualNumberWindow.Text);
+            squared = squared * squared;
+            IndividualNumberWindow.Text = squared.ToString();
         }
     }
 }
