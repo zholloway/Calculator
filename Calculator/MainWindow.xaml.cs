@@ -24,6 +24,7 @@ namespace Calculator
         public MainWindow()
         {
             InitializeComponent();
+            PreviewKeyDown += new KeyEventHandler(Window_KeyDown);
         } 
 
         private bool justDidCalculation { get; set; }
@@ -219,35 +220,6 @@ namespace Calculator
             }
         }
 
-        /*
-        private void Plus_Minus_Click(object sender, RoutedEventArgs e)
-        {
-            var textWindow = NumberWindow.Text;
-            textWindow.Trim(' ');
-
-            if (textWindow.Contains('+'))
-            {
-                var splitWindow = textWindow.Split('+');
-                var number = ((Double.Parse(splitWindow[1])) * -1).ToString();
-                NumberWindow.Text = $"{splitWindow[0]}+{number}";
-            }
-            if (textWindow.Contains('-'))
-            {
-                
-            }
-
-            if (textWindow.Contains('*'))
-            {
-               
-            }
-
-            if (textWindow.Contains('/'))
-            {
-                
-            }
-        }
-        */
-
         private void Equals_Click(object sender, RoutedEventArgs e)
         {
             NumberWindow.Text += IndividualNumberWindow.Text;
@@ -338,6 +310,220 @@ namespace Calculator
             var squared = double.Parse(IndividualNumberWindow.Text);
             squared = squared * squared;
             IndividualNumberWindow.Text = squared.ToString();
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.Key)
+            {                 
+                case Key.D1:
+                    if (justDidCalculation == true)
+                    {
+                        IndividualNumberWindow.Text = String.Empty;
+                        IndividualNumberWindow.Text += "1";
+                        justDidCalculation = false;
+                        NumberWindow.Text = String.Empty;
+                    }
+                    else
+                    {
+                        IndividualNumberWindow.Text += "1";
+                    }
+                    e.Handled = true;
+                    break;
+                case Key.D2:
+                    if (justDidCalculation == true)
+                    {
+                        IndividualNumberWindow.Text = String.Empty;
+                        IndividualNumberWindow.Text += "2";
+                        justDidCalculation = false;
+                        NumberWindow.Text = String.Empty;
+                    }
+                    else
+                    {
+                        IndividualNumberWindow.Text += "2";
+                    }
+                    e.Handled = true;
+                    break;
+                case Key.D3:
+                    if (justDidCalculation == true)
+                    {
+                        IndividualNumberWindow.Text = String.Empty;
+                        IndividualNumberWindow.Text += "3";
+                        justDidCalculation = false;
+                        NumberWindow.Text = String.Empty;
+                    }
+                    else
+                    {
+                        IndividualNumberWindow.Text += "3";
+                    }
+                    e.Handled = true;
+                    break;
+                case Key.D4:
+                    if (justDidCalculation == true)
+                    {
+                        IndividualNumberWindow.Text = String.Empty;
+                        IndividualNumberWindow.Text += "4";
+                        justDidCalculation = false;
+                        NumberWindow.Text = String.Empty;
+                    }
+                    else
+                    {
+                        IndividualNumberWindow.Text += "4";
+                    }
+                    e.Handled = true;
+                    break;
+                case Key.D5:
+                    if (justDidCalculation == true)
+                    {
+                        IndividualNumberWindow.Text = String.Empty;
+                        IndividualNumberWindow.Text += "5";
+                        justDidCalculation = false;
+                        NumberWindow.Text = String.Empty;
+                    }
+                    else
+                    {
+                        IndividualNumberWindow.Text += "5";
+                    }
+                    e.Handled = true;
+                    break;
+                case Key.D6:
+                    if (justDidCalculation == true)
+                    {
+                        IndividualNumberWindow.Text = String.Empty;
+                        IndividualNumberWindow.Text += "6";
+                        justDidCalculation = false;
+                        NumberWindow.Text = String.Empty;
+                    }
+                    else
+                    {
+                        IndividualNumberWindow.Text += "6";
+                    }
+                    e.Handled = true;
+                    break;
+                case Key.D7:
+                    if (justDidCalculation == true)
+                    {
+                        IndividualNumberWindow.Text = String.Empty;
+                        IndividualNumberWindow.Text += "7";
+                        justDidCalculation = false;
+                        NumberWindow.Text = String.Empty;
+                    }
+                    else
+                    {
+                        IndividualNumberWindow.Text += "7";
+                    }
+                    e.Handled = true;
+                    break;
+                case Key.D8:
+                    if (justDidCalculation == true)
+                    {
+                        IndividualNumberWindow.Text = String.Empty;
+                        IndividualNumberWindow.Text += "8";
+                        justDidCalculation = false;
+                        NumberWindow.Text = String.Empty;
+                    }
+                    else
+                    {
+                        IndividualNumberWindow.Text += "8";
+                    }
+                    e.Handled = true;
+                    break;
+                case Key.D9:
+                    if (justDidCalculation == true)
+                    {
+                        IndividualNumberWindow.Text = String.Empty;
+                        IndividualNumberWindow.Text += "9";
+                        justDidCalculation = false;
+                        NumberWindow.Text = String.Empty;
+                    }
+                    else
+                    {
+                        IndividualNumberWindow.Text += "9";
+                    }
+                    e.Handled = true;
+                    break;
+                case Key.D0:
+                    if (justDidCalculation == true)
+                    {
+                        IndividualNumberWindow.Text = String.Empty;
+                        IndividualNumberWindow.Text += "0";
+                        justDidCalculation = false;
+                        NumberWindow.Text = String.Empty;
+                    }
+                    else
+                    {
+                        IndividualNumberWindow.Text += "0";
+                    }
+                    e.Handled = true;
+                    break;
+                case Key.Enter:
+                    NumberWindow.Text += IndividualNumberWindow.Text;
+                    var textWindow = NumberWindow.Text;
+                    textWindow.Trim(' ');
+
+                    if (textWindow.Contains('+'))
+                    {
+                        IndividualNumberWindow.Text = Math.Addition('+', textWindow);
+                    }
+
+                    if (textWindow.Contains('-'))
+                    {
+                        IndividualNumberWindow.Text = Math.Subtraction('-', textWindow);
+                    }
+
+                    if (textWindow.Contains('*'))
+                    {
+                        IndividualNumberWindow.Text = Math.Multiplication('*', textWindow);
+                    }
+
+                    if (textWindow.Contains('/')) //10417
+                    {
+                        IndividualNumberWindow.Text = Math.Division('/', textWindow);
+                    }
+
+                    justDidCalculation = true;
+
+                    e.Handled = true;
+                    break;
+                case Key.Divide:
+                    NumberWindow.Text += $"{IndividualNumberWindow.Text}/";
+                    IndividualNumberWindow.Text = String.Empty;
+                    e.Handled = true;
+                    break;
+                case Key.Multiply:
+                    NumberWindow.Text += $"{IndividualNumberWindow.Text}*";
+                    IndividualNumberWindow.Text = String.Empty;
+                    e.Handled = true;
+                    break;
+                case Key.OemPlus:
+                    NumberWindow.Text += $"{IndividualNumberWindow.Text}+";
+                    IndividualNumberWindow.Text = String.Empty;
+                    e.Handled = true;
+                    break;
+                case Key.OemMinus:
+                    NumberWindow.Text += $"{IndividualNumberWindow.Text}-";
+                    IndividualNumberWindow.Text = String.Empty;
+                    e.Handled = true;
+                    break;
+                case Key.Back:
+                    var charList = new List<char>();
+
+                    foreach (var character in IndividualNumberWindow.Text)
+                    {
+                        charList.Add(character);
+                    }
+
+                    charList.RemoveAt(charList.Count - 1);
+                    IndividualNumberWindow.Text = String.Empty;
+
+                    foreach (var character in charList)
+                    {
+                        IndividualNumberWindow.Text += character;
+                    }
+                    e.Handled = true;
+                    break;
+                    
+            }
         }
     }
 }
